@@ -14,7 +14,32 @@ Component({
    * 页面的初始数据
    */
   data: {
-    userName:'阿絮'
+    userProfile: "/images/mine/axu.jpg",
+    userId: "123456",
+    userName: '阿絮'
+  },
+
+  methods: {
+    //跳转到个人信息
+    toPersonal: function () {
+      wx.navigateTo({
+        url: './personal/personal?data=' + [this.data.userProfile, this.data.userId, this.data.userName]
+      })
+    },
+
+    //跳转到领养单
+    toOrder: function(){
+      wx.navigateTo({
+        url: './order/order',
+      })
+    },
+
+    //跳转到已发布
+    toReleased: function(){
+      wx.navigateTo({
+        url: './released/released',
+      })
+    }
   },
 
   /**
